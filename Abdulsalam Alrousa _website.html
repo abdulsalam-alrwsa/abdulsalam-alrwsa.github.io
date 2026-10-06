@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Abdulsalam Alrousa | Data Science Graduate</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=DM+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Cairo:wght@400;500;700&display=swap">
+<style>
+:root{
+  --bg:#F3F6FC;--surface:#FBFCFF;--ink:#0E2038;--muted:#55657F;--line:#DCE5F2;--accent:#2B7BBF;--accent-2:#8B7BC8;--on-accent:#FFFFFF;--panel:#14305A;color-scheme:light;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;--body:"DM Sans","Segoe UI",system-ui,sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0A1426;--surface:#121E36;--ink:#EAF1FB;--muted:#A7B6CE;--line:#22324F;--accent:#6FB1F0;--accent-2:#A99BE6;--on-accent:#0A1426;--panel:#1B3563;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0A1426;--surface:#121E36;--ink:#EAF1FB;--muted:#A7B6CE;--line:#22324F;--accent:#6FB1F0;--accent-2:#A99BE6;--on-accent:#0A1426;--panel:#1B3563;color-scheme:dark}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0;letter-spacing:-.02em}
+h2{font-size:clamp(28px,4vw,40px);margin-bottom:28px}
+p{margin:0 0 1em;max-width:62ch}
+section{padding:72px 0;border-top:1px solid var(--line)}
+
+header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:800 20px var(--display);text-decoration:none}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+nav ul a{text-decoration:none;color:var(--muted);font-size:15px}
+nav ul a:hover{color:var(--ink)}
+@media (max-width:560px){nav ul{gap:14px}nav ul a{font-size:14px}}
+
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:72px 0 56px;border:0}
+.role{display:inline-block;padding:4px 12px;border:1px solid var(--line);border-radius:99px;background:var(--surface);color:var(--muted);font-size:14px;margin-bottom:20px}
+h1{font-size:clamp(34px,5.4vw,58px);font-weight:800}
+.lead{font-size:19px;color:var(--muted);margin:22px 0 28px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:500;text-decoration:none;border:1px solid var(--line);background:var(--surface)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn:hover{transform:translateY(-1px)}
+.plot{width:100%;height:auto;background:var(--surface);border:1px solid var(--line);border-radius:16px}
+.plot .axis{stroke:var(--line);stroke-width:1}
+.plot .dot{fill:var(--accent);opacity:.85}
+.plot .trend{stroke:var(--accent-2);stroke-width:3;fill:none;stroke-linecap:round;stroke-dasharray:420;stroke-dashoffset:420;animation:draw 1.6s .3s ease forwards}
+.plot text{fill:var(--muted);font:12px var(--body)}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.plot .trend{animation:none;stroke-dashoffset:0}html{scroll-behavior:auto}}
+@media (max-width:760px){.hero{grid-template-columns:1fr;padding-top:40px}}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:14px;background:var(--surface);margin-bottom:24px}
+.stats div{padding:20px 22px;border-inline-end:1px solid var(--line)}
+.stats div:last-child{border:0}
+.stats b{display:block;font:800 32px var(--display);color:var(--accent)}
+.stats span{color:var(--muted);font-size:14px}
+@media (max-width:760px){.stats{grid-template-columns:1fr 1fr}.stats div:nth-child(2){border-inline-end:0}.stats div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:48px}
+dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:10px 18px;align-content:start;padding:22px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+dt{color:var(--muted);font-size:15px}dd{margin:0;font-weight:500}
+@media (max-width:760px){.about{grid-template-columns:1fr;gap:28px}}
+
+.skills{display:grid;gap:0;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.row{display:grid;grid-template-columns:200px 1fr;gap:16px;padding:20px 22px;border-bottom:1px solid var(--line)}
+.row:last-child{border:0}
+.row h3{font-size:18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{padding:3px 12px;border-radius:99px;background:var(--bg);border:1px solid var(--line);font-size:15px}
+@media (max-width:640px){.row{grid-template-columns:1fr;gap:10px}}
+
+.featured{display:grid;grid-template-columns:1.3fr 1fr;gap:32px;padding:28px;border:1px solid var(--line);border-radius:16px;background:var(--surface);margin-bottom:20px}
+.tag{color:var(--accent-2);font-weight:500;font-size:15px;margin-bottom:8px}
+.featured h3{font-size:28px;margin-bottom:14px}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-content:start}
+.metrics div{padding:16px;border-radius:12px;background:var(--bg);border:1px solid var(--line)}
+.metrics b{display:block;font:800 28px var(--display)}
+.metrics span{color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{padding:24px;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+.card h3{font-size:22px;margin-bottom:10px}
+.link{font-weight:500;color:var(--accent)}
+@media (max-width:760px){.featured,.grid{grid-template-columns:1fr}}
+
+.contact{text-align:left}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+footer{padding:28px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+.plot{background:var(--panel);border:0;border-radius:120px 28px 120px 28px;position:relative;z-index:1}
+.plot .axis{stroke:#7A5A98}
+.plot .dot{fill:#F0C05A;opacity:.95}
+.plot .dot:nth-child(3n){fill:#FAF5F0}
+.plot .trend{stroke:#FAF5F0}
+.plot text{fill:#D9C9E4}
+.hero{position:relative}
+.hero::before{content:"";position:absolute;width:230px;height:230px;border-radius:50%;background:var(--accent-2);opacity:.35;right:-24px;top:34px;z-index:0}
+.hero::after{content:"";position:absolute;width:84px;height:84px;border:14px solid var(--accent);border-radius:50%;left:44%;bottom:6px;opacity:.22;z-index:0}
+.hero>*{position:relative;z-index:1}
+@media (max-width:760px){.hero::after{display:none}.hero::before{width:150px;height:150px}}
+body{overflow-x:hidden}
+.role{display:block;width:fit-content;border-radius:999px;border-color:var(--accent-2)}
+h1{display:inline;color:var(--ink);background:linear-gradient(transparent 64%,color-mix(in srgb,var(--accent-2) 60%,transparent) 64%);box-decoration-break:clone;-webkit-box-decoration-break:clone}
+h2::before{content:"";display:inline-block;width:14px;height:14px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--accent-2);margin-inline-end:14px}
+.btn{border-radius:999px;padding:12px 26px}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.stats{background:#E9B44C;border:0;border-radius:32px;overflow:hidden}
+.stats div,.stats div:nth-child(-n+2){border-color:rgba(46,23,64,.22)}
+.stats b{color:#2E1740}
+.stats span{color:#4A2A5C}
+dl,.skills{border-radius:26px}
+.card{border-radius:36px 10px 36px 10px}
+.featured{background:var(--panel);border:0;border-radius:48px 12px 48px 12px;color:#FAF5F0}
+.featured p{color:#E6DCEE}
+.featured .tag{color:#F0C05A}
+.featured .chips span{background:rgba(250,245,240,.12);border-color:rgba(250,245,240,.28);color:#FAF5F0}
+.featured .metrics div{background:rgba(250,245,240,.09);border-color:rgba(250,245,240,.2);border-radius:20px}
+.featured .metrics b{color:#F0C05A}
+.featured .metrics span{color:#D9C9E4}
+.featured .link{color:#F0C05A}
+nav{direction:ltr}
+.brand{display:flex;align-items:center;gap:14px}
+.lang{font:500 15px var(--body);padding:6px 14px;border:1px solid var(--line);border-radius:99px;background:var(--surface);color:var(--ink);cursor:pointer}
+.lang:hover{border-color:var(--accent)}
+html[lang="ar"]{--display:"Cairo","Segoe UI",Tahoma,sans-serif;--body:"Cairo","Segoe UI",Tahoma,sans-serif}
+html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3{letter-spacing:0;line-height:1.3;font-weight:700}
+html[lang="ar"] body{line-height:1.85}
+html[dir="rtl"] nav ul{direction:rtl}
+@media (max-width:640px){.logo{display:none}}
+
+.glance{font-size:20px;margin-bottom:12px}
+.icards{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.icard{font:inherit;color:inherit;text-align:start;cursor:pointer;padding:24px;border:1px solid var(--line);border-radius:36px 10px 36px 10px;background:var(--surface);transition:transform .2s,border-color .2s}
+.icard:hover{transform:translateY(-3px);border-color:var(--accent-2)}
+.icard h3{font-size:22px;margin-bottom:8px}.icard p{margin-bottom:14px}
+.more{color:var(--accent);font-weight:500}.more::after{content:" →"}
+html[dir="rtl"] .more::after{content:" ←"}
+dialog{width:min(560px,92vw);padding:30px;border:1px solid var(--line);border-radius:40px 12px 40px 12px;background:var(--surface);color:var(--ink)}
+dialog::backdrop{background:rgba(30,15,42,.62)}
+dialog h2{font-size:28px;margin-bottom:14px}dialog h2::before{display:none}dialog h3{font-size:17px;margin:18px 0 10px}
+.x{position:absolute;top:14px;inset-inline-end:16px;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:22px;cursor:pointer}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.form{display:grid;gap:14px}
+.form label{display:grid;gap:6px;font-size:15px;color:var(--muted)}
+.form input,.form textarea{font:inherit;color:var(--ink);padding:11px 14px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.form button{justify-self:start;cursor:pointer;font:inherit;font-weight:500}
+.foot{display:grid;grid-template-columns:1.4fr 1fr auto;gap:24px;align-items:center}
+.foot b{font:800 20px var(--display);color:var(--ink)}.foot p{margin:4px 0 0;font-size:14px}
+.fl{display:flex;gap:16px}
+@media (max-width:760px){.icards,.cgrid,.foot{grid-template-columns:1fr}}
+
+:root{--display:"Sora","Segoe UI",system-ui,sans-serif;--glow:linear-gradient(90deg,#2B7BBF,#8B7BC8,#3AA89A)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 90px)}
+body::before{content:"";position:fixed;inset:-15%;z-index:-1;pointer-events:none;background:radial-gradient(40% 35% at 85% 8%,rgba(150,195,240,.55),transparent 70%),radial-gradient(35% 35% at 8% 40%,rgba(180,160,230,.32),transparent 70%),radial-gradient(40% 35% at 20% 95%,rgba(245,190,150,.32),transparent 70%),radial-gradient(30% 30% at 55% 50%,rgba(150,225,200,.22),transparent 70%);animation:drift 24s ease-in-out infinite alternate}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body::before{opacity:.5}}
+@keyframes drift{to{transform:translate3d(3%,-2%,0) scale(1.08)}}
+@keyframes float{50%{transform:translateY(-20px) rotate(4deg)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}}
+header{background:transparent;border:0;-webkit-backdrop-filter:none;backdrop-filter:none}
+header nav{height:58px;margin-top:10px;padding:0 14px;border-radius:999px;background:color-mix(in srgb,var(--surface) 78%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid var(--line);box-shadow:0 10px 30px rgba(30,70,130,.12)}
+nav ul{gap:4px}
+nav ul a{padding:7px 14px;border-radius:99px;transition:background .25s,color .25s,box-shadow .25s}
+nav ul a.on{background:var(--surface);color:var(--ink);box-shadow:0 2px 8px rgba(30,70,130,.14)}
+@media (max-width:560px){nav ul a{padding:6px 8px}}
+.bar{position:fixed;top:0;left:0;height:3px;width:0;background:var(--glow);z-index:10}
+.rail{position:fixed;left:14px;top:50%;transform:translateY(-50%);z-index:4;display:flex;flex-direction:column;gap:8px;padding:10px 8px;border-radius:999px;background:color-mix(in srgb,var(--surface) 80%,transparent);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid var(--line);box-shadow:0 10px 30px rgba(30,70,130,.12)}
+.rail a{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;text-decoration:none;font:700 13px var(--body);color:var(--ink);transition:background .2s,transform .2s,color .2s}
+.rail a:hover{background:var(--accent);color:#fff;transform:scale(1.1)}
+@media (max-width:1180px){.rail{display:none}}
+.hero::before,.hero::after{display:none}
+.hero>.orb{position:absolute;border-radius:50%;z-index:0;pointer-events:none;background:radial-gradient(circle at 30% 25%,#fff 0,rgba(200,226,248,.95) 38%,rgba(150,195,235,.75) 100%);border:1px solid rgba(255,255,255,.85);box-shadow:inset -10px -12px 24px rgba(90,140,205,.28),0 20px 44px rgba(70,120,190,.22);animation:float 9s ease-in-out infinite;translate:0 calc(var(--sy,0)*var(--k)*1px)}
+.o1{width:120px;height:120px;right:5%;top:8%;--k:-.06}
+.o2{width:36px;height:36px;right:44%;top:48%;--k:-.12;animation-duration:7s!important;animation-delay:-2s!important}
+.o3{width:72px;height:72px;right:12%;bottom:6%;--k:-.04;animation-duration:11s!important;animation-delay:-4s!important}
+.hero>.o4{width:300px;height:300px;right:-3%;top:0;background:none;box-shadow:none;border:1.5px solid rgba(120,170,220,.5);--k:-.02;animation-duration:14s!important}
+@media (max-width:760px){.o4{display:none}.o1{width:80px;height:80px}}
+.js .hero>div>*{animation:fadeUp .9s cubic-bezier(.2,.7,.2,1) both}
+.hero>div>:nth-child(2){animation-delay:.1s!important}.hero>div>:nth-child(3){animation-delay:.2s!important}.hero>div>:nth-child(4){animation-delay:.3s!important}
+.js .hero .plot{animation:fadeUp 1s .35s cubic-bezier(.2,.7,.2,1) both}
+.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.js .reveal.in{opacity:1;transform:none}
+h1{display:block;width:min-content;max-width:100%;background:none;color:var(--accent);font-style:italic;font-weight:800;font-size:clamp(40px,7vw,76px);line-height:1.02}
+h1::first-line{color:var(--ink);font-style:normal}
+html[lang="ar"] h1{font-style:normal}
+h2::before{background:var(--glow)}
+.role,.stats span,.more,.tag{font-family:"JetBrains Mono",ui-monospace,monospace}
+.role{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);background:color-mix(in srgb,var(--surface) 80%,transparent);border-color:var(--line)}
+html[lang="ar"] .role,html[lang="ar"] .stats span,html[lang="ar"] .more,html[lang="ar"] .tag{font-family:var(--body);letter-spacing:0;text-transform:none}
+.btn{background:color-mix(in srgb,var(--surface) 80%,transparent);transition:transform .2s,box-shadow .2s}
+.btn:hover{box-shadow:0 10px 24px rgba(30,70,130,.18)}
+.btn.primary{background:linear-gradient(135deg,#3A7CC0,#1F4C8F);border-color:transparent;color:#fff;box-shadow:0 10px 24px rgba(31,76,143,.35)}
+.plot{background:linear-gradient(155deg,#17356A,#2B6CB0)}
+.plot .axis{stroke:#5C86B8}.plot .dot{fill:#BFE0FF}.plot .dot:nth-child(3n){fill:#FFD9B0}.plot .trend{stroke:#7FE0C8}.plot text{fill:#D4E5F8}
+.stats{background:transparent;border:0;border-radius:0;overflow:visible;gap:14px}
+.stats div{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--c,#2B7BBF);border-radius:20px;padding:20px 22px}
+.stats div:nth-child(n){border-color:var(--line);border-top-color:var(--c)}
+.stats div:nth-child(1){--c:#2B7BBF}.stats div:nth-child(2){--c:#8B7BC8}.stats div:nth-child(3){--c:#3AA89A}.stats div:nth-child(4){--c:#EBA66B}
+.stats b{color:var(--c);font-family:var(--display)}
+.stats span{color:var(--muted);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.featured{background:linear-gradient(150deg,#13294F,#1F4C8F)}
+.featured .tag,.featured .metrics b,.featured .link{color:#9CCBF5}
+dialog::backdrop{background:rgba(14,32,56,.6)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+h1{font-style:normal;font-size:clamp(36px,6vw,64px);letter-spacing:-.03em}
+.cgrid{grid-template-columns:1fr}
+@keyframes sway{50%{translate:0 -12px;rotate:1.2deg}}
+@keyframes pop{50%{transform:scale(1.6);opacity:.55}}
+@keyframes pulse{0%,100%{box-shadow:0 10px 24px rgba(31,76,143,.35)}50%{box-shadow:0 10px 38px rgba(58,124,192,.75)}}
+@keyframes marq{to{transform:translateX(-50%)}}
+@keyframes wob{50%{transform:rotate(-45deg) scale(1.4)}}
+.js .hero .plot{animation:fadeUp 1s .35s cubic-bezier(.2,.7,.2,1) both,sway 9s 1.4s ease-in-out infinite}
+.plot .trend{animation:draw 4.5s .3s ease-in-out infinite alternate}
+.plot .dot{transform-box:fill-box;transform-origin:center;animation:pop 3.2s ease-in-out infinite}
+.plot .dot:nth-child(2n){animation-delay:-1.1s}.plot .dot:nth-child(3n){animation-delay:-2.2s}.plot .dot:nth-child(5n){animation-delay:-.5s}
+.btn.primary{animation:pulse 3s ease-in-out infinite}
+h2::before{animation:wob 3s ease-in-out infinite}
+.marquee{overflow:hidden;margin:6px 0 10px;direction:ltr;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.track{display:flex;width:max-content;animation:marq 30s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.group{display:flex;align-items:center;gap:30px;padding-inline-end:30px}
+.group span{font:800 clamp(24px,4vw,40px) var(--display);color:transparent;-webkit-text-stroke:1.5px var(--accent);white-space:nowrap}
+.group span:nth-of-type(even){color:var(--ink);-webkit-text-stroke:0}
+.group i{font-style:normal;color:var(--accent-2);font-size:22px}
+</style>
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+<header><div class="wrap"><nav>
+  <div class="brand"><button class="lang" id="lang" type="button" aria-label="Switch language">العربية</button>
+  <a data-ar="عبدالسلام الروساء" class="logo" href="#top">Abdulsalam Alrousa</a></div>
+  <ul><li><a data-ar="نبذة" href="#about">About</a></li><li><a data-ar="الاهتمامات" href="#interests">Interests</a></li><li><a data-ar="المشاريع" href="#projects">Projects</a></li><li><a data-ar="تواصل" href="#contact">Contact</a></li></ul>
+</nav></div></header>
+<div class="bar" id="bar"></div>
+<aside class="rail" aria-label="Social links"><a href="https://www.linkedin.com/in/abdulsalam-alrousa-94bb7a41b" aria-label="LinkedIn">in</a><a href="https://github.com/abdulsalam-alrwsa" aria-label="GitHub">GH</a><a href="mailto:Abdulsalam.alrwsa@gmail.com" aria-label="Email">@</a></aside>
+
+<main class="wrap" id="top">
+  <section class="hero"><span class="orb o4"></span><span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span>
+    <div>
+      <span data-ar="متدرب تعاوني في صندوق تنمية الموارد البشرية (هدف)" class="role">Co-op Trainee at HRDF</span>
+      <h1 data-ar="عبدالسلام الروساء">Abdulsalam Alrousa</h1>
+      <p data-ar="خريج علوم حاسب متخصص في علم البيانات، أحوّل مجموعات البيانات المعقدة إلى رؤى واضحة وحلول عملية." class="lead">Computer Science graduate specializing in Data Science, turning complex datasets into clear insights and practical solutions.</p>
+      <div class="btns"><a data-ar="استكشف الاهتمامات" class="btn primary" href="#interests">Explore interests</a><a data-ar="عرض المشاريع" class="btn" href="#projects">View projects</a><a data-ar="تواصل معي" class="btn" href="#contact">Get in touch</a></div>
+    </div>
+    <svg class="plot" viewBox="0 0 400 320" role="img" aria-label="Decorative scatter plot with an upward trend line">
+      <line class="axis" x1="36" y1="276" x2="380" y2="276"/><line class="axis" x1="36" y1="24" x2="36" y2="276"/>
+      <g id="dots"></g>
+      <path class="trend" d="M44 250 C140 220 220 150 372 52"/>
+      <text data-ar="بيانات خام" x="40" y="304">Raw data</text><text data-ar="رؤى" x="368" y="24" text-anchor="end">Insight</text>
+    </svg>
+  </section>
+
+  <div class="stats" aria-label="Highlights">
+    <div><b data-count="2026">2026</b><span data-ar="سنة التخرج">Graduation year</span></div>
+    <div><b data-ar="هدف">HRDF</b><span data-ar="تدريب تعاوني">Co-op training</span></div>
+    <div><b data-count="5">5</b><span data-ar="مهارات أساسية">Core skills</span></div>
+    <div><b data-count="1">1</b><span data-ar="مشروع عام على GitHub">Public GitHub project</span></div>
+  </div>
+
+  <div class="marquee" aria-hidden="true"><div class="track"><div class="group"><span>C++</span><i>✦</i><span>SQL</span><i>✦</i><span>Power BI</span><i>✦</i><span data-ar="تحليل البيانات">Data Analysis</span><i>✦</i><span data-ar="قواعد البيانات">Databases</span><i>✦</i><span>C++</span><i>✦</i><span>SQL</span><i>✦</i><span>Power BI</span><i>✦</i><span data-ar="تحليل البيانات">Data Analysis</span><i>✦</i><span data-ar="قواعد البيانات">Databases</span><i>✦</i></div><div class="group"><span>C++</span><i>✦</i><span>SQL</span><i>✦</i><span>Power BI</span><i>✦</i><span data-ar="تحليل البيانات">Data Analysis</span><i>✦</i><span data-ar="قواعد البيانات">Databases</span><i>✦</i><span>C++</span><i>✦</i><span>SQL</span><i>✦</i><span>Power BI</span><i>✦</i><span data-ar="تحليل البيانات">Data Analysis</span><i>✦</i><span data-ar="قواعد البيانات">Databases</span><i>✦</i></div></div></div>
+
+  <section id="about">
+    <h2 data-ar="نبذة عني">About me</h2>
+    <div class="about">
+      <div>
+        <p data-ar="أنا خريج علوم الحاسب من جامعة المجمعة، متخصص في علم البيانات. أستمتع بتحويل مجموعات البيانات المعقدة إلى رؤى ذات معنى وحلول عملية.">I am a Computer Science graduate from Majmaah University, specializing in Data Science. I enjoy turning complex datasets into meaningful insights and practical solutions.</p>
+        <p data-ar="أكتسب حاليًا خبرة عملية من خلال برنامج التدريب التعاوني في صندوق تنمية الموارد البشرية (هدف).">I am currently gaining hands-on experience through a co-op training program at the Human Resources Development Fund (HRDF).</p>
+      </div>
+      <div><h3 class="glance" data-ar="نظرة سريعة">At a glance</h3><dl>
+        <dt data-ar="التدريب التعاوني">Co-op</dt><dd data-ar="صندوق تنمية الموارد البشرية (هدف)">HRDF</dd>
+        <dt data-ar="الجامعة">University</dt><dd data-ar="جامعة المجمعة">Majmaah University</dd>
+        <dt data-ar="سنة التخرج">Graduated</dt><dd>2026</dd>
+        <dt data-ar="التخصص">Major</dt><dd data-ar="علوم الحاسب، علم البيانات">Computer Science, Data Science</dd>
+      </dl></div>
+    </div>
+  </section>
+
+  <section id="interests"><h2 data-ar="المجالات التي أعمل فيها">Areas I work in</h2><p data-ar="اختر بطاقة لمعرفة المزيد عن كل مجال.">Select a card to learn more about each area.</p><div class="icards"><button class="icard" type="button" data-open="d-da"><h3 data-ar="تحليل البيانات">Data Analysis</h3><p data-ar="تحويل البيانات الخام إلى رؤى واضحة ومفيدة.">Turning raw datasets into clear, useful insights.</p><span class="more" data-ar="عرض التفاصيل">Open details</span></button><button class="icard" type="button" data-open="d-db"><h3 data-ar="قواعد البيانات وSQL">Databases and SQL</h3><p data-ar="تنظيم البيانات واسترجاعها باستخدام الاستعلامات.">Organizing data and retrieving it with queries.</p><span class="more" data-ar="عرض التفاصيل">Open details</span></button><button class="icard" type="button" data-open="d-bi"><h3 data-ar="Power BI">Power BI</h3><p data-ar="بناء التقارير ولوحات المعلومات المرئية.">Building visual reports and dashboards.</p><span class="more" data-ar="عرض التفاصيل">Open details</span></button><button class="icard" type="button" data-open="d-cpp"><h3 data-ar="البرمجة بلغة C++">C++ Programming</h3><p data-ar="كتابة برامج منظمة بلغة C++.">Writing structured programs in C++.</p><span class="more" data-ar="عرض التفاصيل">Open details</span></button></div><dialog id="d-da"><button class="x" type="button" data-close aria-label="Close">×</button><h2 data-ar="تحليل البيانات">Data Analysis</h2><p data-ar="أركّز على تنظيف البيانات واستكشافها وتفسيرها لتستند القرارات إلى أدلة. وهذا هو جوهر تخصصي في علم البيانات.">I focus on cleaning, exploring and interpreting data so that decisions rest on evidence. This is the core of my Data Science specialization.</p><h3 data-ar="المهارات ذات الصلة">Related skills</h3><div class="chips"><span>Data Analysis</span><span>Databases</span><span>Power BI</span></div></dialog><dialog id="d-db"><button class="x" type="button" data-close aria-label="Close">×</button><h2 data-ar="قواعد البيانات وSQL">Databases and SQL</h2><p data-ar="أعمل مع قواعد البيانات ولغة SQL لتخزين البيانات وتنظيمها والاستعلام عنها بكفاءة.">I work with databases and SQL to store, organize and query data efficiently.</p><h3 data-ar="المهارات ذات الصلة">Related skills</h3><div class="chips"><span>SQL</span><span>Databases</span></div></dialog><dialog id="d-bi"><button class="x" type="button" data-close aria-label="Close">×</button><h2 data-ar="Power BI">Power BI</h2><p data-ar="أستخدم Power BI لتحويل البيانات إلى تقارير مرئية سهلة القراءة والمشاركة.">I use Power BI to turn data into visual reports that are easy to read and share.</p><h3 data-ar="المهارات ذات الصلة">Related skills</h3><div class="chips"><span>Power BI</span><span>Data Analysis</span></div></dialog><dialog id="d-cpp"><button class="x" type="button" data-close aria-label="Close">×</button><h2 data-ar="البرمجة بلغة C++">C++ Programming</h2><p data-ar="C++ هي لغة مشروعي الفصلي CommunityMember المتاح على GitHub.">C++ is the language of my CommunityMember term project, available on GitHub.</p><p><a class="link" data-ar="عرض المشروع" href="https://github.com/abdulsalam-alrwsa/CommunityMember-termProject">View project</a></p><h3 data-ar="المهارات ذات الصلة">Related skills</h3><div class="chips"><span>C++</span></div></dialog></section>
+
+  <section id="projects">
+    <h2 data-ar="المشاريع">Projects</h2>
+    <article class="featured">
+      <div>
+        <div data-ar="مشروع فصلي" class="tag">Term project</div>
+        <h3>CommunityMember</h3>
+        <p data-ar="نظام لإدارة أعضاء المجتمع مكتوب بلغة C++.">A community member management system written in C++.</p>
+        <div class="chips"><span>C++</span></div>
+        <p style="margin-top:18px"><a data-ar="عرض على GitHub" class="link" href="https://github.com/abdulsalam-alrwsa/CommunityMember-termProject">View on GitHub</a></p>
+      </div>
+      <div class="metrics">
+        <div><b>C++</b><span data-ar="اللغة">Language</span></div><div><b data-ar="عام">Public</b><span data-ar="مستودع GitHub">GitHub repository</span></div>
+      </div>
+    </article>
+    <article class="card"><h3 data-ar="مشاريع أخرى قريبًا">More projects coming soon</h3><p data-ar="مشاريع في تحليل البيانات وSQL قادمة قريبًا.">Data analysis and SQL projects are on the way.</p><div class="chips"><span>SQL</span><span data-ar="تحليل البيانات">Data Analysis</span></div></article>
+  </section>
+
+  <section id="contact"><h2 data-ar="تواصل معي">Get in touch</h2>
+    <div class="cgrid"><div><p data-ar="أنا منفتح على فرص علم البيانات والتعاون.">I am open to data science opportunities and collaboration.</p>
+      <h3 data-ar="التواصل المباشر">Direct lines</h3>
+      <div class="links"><a class="btn primary" href="mailto:Abdulsalam.alrwsa@gmail.com">Abdulsalam.alrwsa@gmail.com</a><a class="btn" href="https://github.com/abdulsalam-alrwsa">GitHub</a><a class="btn" href="https://www.linkedin.com/in/abdulsalam-alrousa-94bb7a41b">LinkedIn</a></div></div></div></section>
+</main>
+
+<footer><div class="wrap foot"><div><b data-ar="عبدالسلام الروساء">Abdulsalam Alrousa</b><p data-ar="خريج علم البيانات ومتدرب تعاوني في هدف.">Data Science graduate and co-op trainee at HRDF.</p></div><div class="fl"><a href="https://www.linkedin.com/in/abdulsalam-alrousa-94bb7a41b">LinkedIn</a><a href="https://github.com/abdulsalam-alrwsa">GitHub</a><a href="mailto:Abdulsalam.alrwsa@gmail.com">Email</a></div><div data-ar="© 2026 عبدالسلام الروساء">© 2026 Abdulsalam Alrousa</div></div></footer>
+
+<script>
+(function(){
+  var g=document.getElementById('dots'),s=7,i,x,y,r,c;
+  function rnd(){s=(s*9301+49297)%233280;return s/233280}
+  for(i=0;i<34;i++){
+    x=48+i*9.6;y=250-(x-48)*.6+(rnd()-.5)*70;
+    c=document.createElementNS('http://www.w3.org/2000/svg','circle');
+    c.setAttribute('class','dot');c.setAttribute('cx',x);c.setAttribute('cy',Math.max(34,Math.min(268,y)));c.setAttribute('r',3+rnd()*3);
+    g.appendChild(c);
+  }
+})();
+</script>
+<script>
+(function(){
+  var btn=document.getElementById('lang'),els=document.querySelectorAll('[data-ar]'),t0=document.title;
+  function set(ar){
+    var d=document.documentElement;d.lang=ar?'ar':'en';d.dir=ar?'rtl':'ltr';
+    els.forEach(function(e){if(!e.hasAttribute('data-en'))e.setAttribute('data-en',e.textContent);e.textContent=e.getAttribute(ar?'data-ar':'data-en')});
+    btn.textContent=ar?'English':'العربية';
+    document.title=ar?'عبدالسلام الروساء | خريج علم البيانات':t0;
+    try{localStorage.setItem('lang',ar?'ar':'en')}catch(e){}
+  }
+  btn.addEventListener('click',function(){set(document.documentElement.lang!=='ar')});
+  try{if(localStorage.getItem('lang')==='ar')set(true)}catch(e){}
+})();
+</script>
+<script>
+(function(){
+  document.addEventListener('click',function(e){
+    var o=e.target.closest('[data-open]');
+    if(o){document.getElementById(o.getAttribute('data-open')).showModal();return}
+    if(e.target.closest('[data-close]')){e.target.closest('dialog').close();return}
+    if(e.target.tagName==='DIALOG')e.target.close();
+  });
+  var cs=document.querySelectorAll('[data-count]'),reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function run(el){
+    var to=+el.getAttribute('data-count'),from=to>1000?to-30:0,t0=null;
+    if(reduce){el.textContent=to;return}
+    function f(t){if(!t0)t0=t;var p=Math.min((t-t0)/1200,1);el.textContent=Math.round(from+(to-from)*p);if(p<1)requestAnimationFrame(f)}
+    requestAnimationFrame(f);
+  }
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(x){x.forEach(function(i){if(i.isIntersecting){run(i.target);io.unobserve(i.target)}})});
+    cs.forEach(function(c){io.observe(c)});
+  }
+})();
+</script>
+<script>
+(function(){
+  var r=document.documentElement,rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var els=document.querySelectorAll('section>h2,section>p,.about>*,.icard,.card,.featured,.cgrid>*,.stats div');
+  if(!rm&&'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var t=e.target;t.classList.add('in');io.unobserve(t);setTimeout(function(){t.classList.remove('reveal','in');t.style.transitionDelay=''},1000)}})},{threshold:.12});
+    els.forEach(function(el){el.classList.add('reveal');el.style.transitionDelay=([].indexOf.call(el.parentNode.children,el)%4)*90+'ms';io.observe(el)});
+  }
+  var bar=document.getElementById('bar'),links=[].slice.call(document.querySelectorAll('nav ul a')),secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))}),tick=false;
+  function upd(){tick=false;var y=scrollY,h=r.scrollHeight-innerHeight,cur=-1;
+    r.style.setProperty('--sy',y);bar.style.width=(h>0?y/h*100:0)+'%';
+    secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<innerHeight*.4)cur=i});
+    links.forEach(function(a,i){a.classList.toggle('on',i===cur)});}
+  addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});upd();
+})();
+</script>
+</body>
+</html>
